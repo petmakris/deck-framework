@@ -116,14 +116,21 @@
     if (e.key === 'f' || e.key === 'F') { e.preventDefault(); on ? exit() : enter(); return; }
     if (e.key === 'n' || e.key === 'N') { e.preventDefault(); toggleDrawer(); return; }
     if (e.key === 'Escape' && drawerOpen) { e.preventDefault(); closeDrawer(); return; }
-    // Left/right move to the previous/next slide everywhere, not just in
+    // All four arrows move to the previous/next slide everywhere, not just in
     // full-screen present mode — outside it, stepSlide() scrolls instead of
     // switching a "current" slide. Skipped while typing (e.g. a comment box)
-    // so the deck doesn't steal the keystroke from a text field.
+    // so the deck doesn't steal the keystroke from a text field. Up/Down also
+    // give up the browser's native small-scroll nudge on the plain page —
+    // deliberate: mouse wheel, trackpad and Page Up/Down are unaffected, and
+    // every arrow meaning the same thing matches how Keynote/PowerPoint/
+    // reveal.js already behave.
     const t = e.target;
     const typing = t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable);
-    if (!typing && (e.key === 'ArrowRight' || e.key === 'ArrowLeft')) {
-      e.preventDefault(); stepSlide(e.key === 'ArrowRight' ? 1 : -1); return;
+    if (!typing && (e.key === 'ArrowRight' || e.key === 'ArrowDown' ||
+                     e.key === 'ArrowLeft' || e.key === 'ArrowUp')) {
+      e.preventDefault();
+      stepSlide((e.key === 'ArrowRight' || e.key === 'ArrowDown') ? 1 : -1);
+      return;
     }
     if (!on) return;
     if (e.key === 'PageDown' || e.key === ' ') { e.preventDefault(); show(i + 1); }
