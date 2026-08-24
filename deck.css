@@ -25,6 +25,18 @@
   .wm{position:absolute;left:67px;bottom:30px;font-family:var(--head);font-style:italic;color:var(--faint);font-size:13px}
   .pg{position:absolute;right:80px;bottom:14px;color:var(--faint);font-size:12px}
 
+  /* Promoted from deck-local (2026.06.03-WP-Demo and others): a five-colour
+     strip along the slide's bottom edge. Opt-in — add the markup below to a
+     slide that wants it, nothing renders it automatically.
+     <div class="footbar"><i></i><i></i><i></i><i></i><i></i></div> */
+  .footbar{position:absolute;left:0;bottom:0;width:100%;height:13px;display:flex}
+  .footbar i{flex:1}
+  .footbar i:nth-child(1){background:#B85C2E}
+  .footbar i:nth-child(2){background:#C77F3A}
+  .footbar i:nth-child(3){background:#6B7A47}
+  .footbar i:nth-child(4){background:#3F6679}
+  .footbar i:nth-child(5){background:#8A3A6B}
+
   /* content slide scaffolding */
   .kick{position:absolute;left:67px;top:50px;color:var(--orange);font-weight:bold;font-size:13px;letter-spacing:3px}
   .title{position:absolute;left:67px;top:84px;font-family:var(--head);font-weight:bold;font-size:40px;color:var(--ink)}

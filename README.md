@@ -12,7 +12,7 @@ of each one carrying its own copy-pasted block.
 
 - `deck.css` — the shared style block: design tokens, slide canvas, all shared
   components (`.introb`, `.ctxp`, `.grail`, `.card`, `.flow`, `.stab`, `.rails`,
-  `.strip`, the alignment tree, …), present mode, notes drawer.
+  `.strip`, `.footbar`, the alignment tree, …), present mode, notes drawer.
 - `deck.js` — the shared script: page numbering, zoom-to-fit, present mode, speaker
   notes drawer. Entirely generic — nothing per-deck.
 
