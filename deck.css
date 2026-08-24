@@ -6,6 +6,10 @@
     --head:Georgia,'Times New Roman',serif;
     --body:Calibri,'Segoe UI',Helvetica,Arial,sans-serif;
     --mono:Consolas,'SF Mono',Menlo,monospace;
+    /* Speaker-notes drawer width. One source of truth: deck.js reserves the
+       same amount of space (see reservedW()) so the slide docks beside the
+       drawer instead of sitting underneath it. */
+    --nd-w:min(430px,92vw);
   }
   *{box-sizing:border-box;margin:0;padding:0}
   body{background:#3a3a38;font-family:var(--body);color:var(--ink);padding:32px 0}
@@ -137,12 +141,20 @@
   body.present .deck{gap:0}
   body.present .slide{display:none}
   body.present .slide.current{display:block;position:fixed;left:50%;top:50%;
-    transform:translate(-50%,-50%) scale(var(--present-scale,1));transform-origin:center center;box-shadow:none}
+    transform:translate(-50%,-50%) scale(var(--present-scale,1));transform-origin:center center;box-shadow:none;
+    transition:left .28s ease}
+  /* Docked notes: reserve the drawer's width on the right instead of letting
+     the drawer cover the slide. deck.js narrows --present-scale to match. */
+  body.present.notes-open .slide.current{left:calc((100% - var(--nd-w)) / 2)}
   body.present .floatnav,body.present .present-btn{display:none}
   @media print{.present-btn{display:none}}
 
   .snotes{display:none}
-  .notesdrawer{position:fixed;top:0;right:0;height:100vh;width:430px;max-width:92vw;
+  /* Non-present mode: dock beside the deck instead of overlaying it. The
+     deck's own box narrows to match (see the .deck rule below), so opening
+     notes never hides slide content — it shares the window with it. */
+  body.notes-open:not(.present) .deck{width:calc(100% - var(--nd-w));transition:width .28s ease}
+  .notesdrawer{position:fixed;top:0;right:0;height:100vh;width:var(--nd-w);
     background:#1B1B1A;color:#E7E6DF;box-shadow:-14px 0 44px rgba(0,0,0,.5);
     transform:translateX(100%);transition:transform .28s ease;z-index:1002;
     display:flex;flex-direction:column;font-family:var(--body)}
