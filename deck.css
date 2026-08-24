@@ -19,7 +19,7 @@
   }
   .num{position:absolute;left:-46px;top:6px;color:#cfcec6;font-family:var(--mono);font-size:13px}
   .wm{position:absolute;left:67px;bottom:30px;font-family:var(--head);font-style:italic;color:var(--faint);font-size:13px}
-  .pg{position:absolute;right:80px;bottom:30px;color:var(--faint);font-size:12px}
+  .pg{position:absolute;right:80px;bottom:14px;color:var(--faint);font-size:12px}
 
   /* content slide scaffolding */
   .kick{position:absolute;left:67px;top:50px;color:var(--orange);font-weight:bold;font-size:13px;letter-spacing:3px}
@@ -169,3 +169,15 @@
   body.present .notes-btn{bottom:16px;opacity:.32}
   body.present .notes-btn:hover,body.present .notes-btn.armed{opacity:1}
   @media print{.notesdrawer,.notes-btn{display:none}}
+
+  /* feature intro: prose (added for the 798 rebuild) */
+  .pro{position:absolute;left:67px;right:120px;font-size:21px;line-height:1.62;color:#333330}
+  .pro p{margin:0 0 20px 0}
+  .pro b{color:var(--ink)}
+  .conseq{position:absolute;left:67px;right:120px;font-size:19px;line-height:1.55;color:var(--mute)}
+  .conseq b{color:var(--ink)}
+  .fnote{position:absolute;left:67px;right:120px;font-size:16px;line-height:1.55;color:var(--mute);border-top:1px solid var(--rule);padding-top:13px}
+  .fnote b{color:var(--ink)}
+
+  /* platform divider: a word rather than a numeral behind the title */
+  .divider .ghost.word{font-size:300px;top:52px;right:70px;letter-spacing:-14px}
