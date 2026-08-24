@@ -116,23 +116,6 @@
   .tslide .home-toc a:hover{border-color:var(--orange);color:#fff;background:#232120}
   .tslide .home-toc a .n{font-family:var(--head);font-weight:bold;font-size:17px;color:var(--orange);line-height:1}
 
-  .floatnav{position:fixed;top:50%;left:0;transform:translateY(-50%);z-index:999;display:flex;flex-direction:row-reverse;align-items:stretch}
-  .fn-menu{background:#1B1B1A;box-shadow:0 6px 24px rgba(0,0,0,.45);border-radius:0 8px 8px 0;
-    max-width:0;opacity:0;overflow:hidden;white-space:nowrap;
-    transition:max-width .25s ease,opacity .2s ease,padding .25s ease;padding:16px 0}
-  .floatnav:hover .fn-menu{max-width:260px;opacity:1;padding:16px 20px}
-  .fn-menu .fn-head{color:var(--orange);font-weight:bold;font-size:10px;letter-spacing:3px;display:block;margin-bottom:8px}
-  .fn-menu a{display:block;color:#CFCEC6;text-decoration:none;font-family:var(--mono);font-size:13.5px;padding:6px 0;border-bottom:1px solid #313130;transition:color .15s ease}
-  .fn-menu a:last-child{border-bottom:none}
-  .fn-menu a:hover{color:var(--orange)}
-  .fn-tab{background:#1B1B1A;color:#CFCEC6;writing-mode:vertical-rl;text-orientation:mixed;
-    font-family:var(--mono);font-size:11px;letter-spacing:3px;font-weight:bold;
-    display:flex;align-items:center;justify-content:center;padding:0 8px;
-    border-right:3px solid var(--orange);border-radius:0 8px 8px 0;
-    box-shadow:0 4px 16px rgba(0,0,0,.4);user-select:none;cursor:pointer}
-  .floatnav:hover .fn-tab{border-radius:0}
-  @media print{.floatnav{display:none}}
-
   .present-btn{position:fixed;right:16px;bottom:16px;z-index:1001;background:#1B1B1A;color:#CFCEC6;
     border:1px solid var(--orange);border-radius:6px;padding:8px 14px;font-family:var(--mono);
     font-size:13px;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.4)}
@@ -146,7 +129,7 @@
   /* Docked notes: reserve the drawer's width on the right instead of letting
      the drawer cover the slide. deck.js narrows --present-scale to match. */
   body.present.notes-open .slide.current{left:calc((100% - var(--nd-w)) / 2)}
-  body.present .floatnav,body.present .present-btn{display:none}
+  body.present .present-btn{display:none}
   @media print{.present-btn{display:none}}
 
   .snotes{display:none}

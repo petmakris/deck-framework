@@ -14,7 +14,7 @@ of each one carrying its own copy-pasted block.
   components (`.introb`, `.ctxp`, `.grail`, `.card`, `.flow`, `.stab`, `.rails`,
   `.strip`, the alignment tree, …), present mode, notes drawer.
 - `deck.js` — the shared script: page numbering, zoom-to-fit, present mode, speaker
-  notes drawer, jump nav. Entirely generic — nothing per-deck.
+  notes drawer. Entirely generic — nothing per-deck.
 
 The full catalogue, with markup for each component, is
 [`components.md`](https://github.com/petmakris/dashboard/blob/main/skills/slides/references/components.md)
