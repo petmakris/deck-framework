@@ -181,3 +181,119 @@
 
   /* platform divider: a word rather than a numeral behind the title */
   .divider .ghost.word{font-size:300px;top:52px;right:70px;letter-spacing:-14px}
+
+  /* ── step chain ───────────────────────────────────────────────────────
+     promoted from 2026.08.26-WP-Monthly-Review: equal-width steps + arrows */
+  .flow{position:absolute;left:67px;right:67px;display:flex;align-items:stretch}
+  .flow .fs{flex:1;background:var(--panel);border-radius:10px;padding:18px 20px 17px;
+            box-shadow:0 3px 12px rgba(0,0,0,.08)}
+  .flow .fs .fn{font-family:var(--mono);font-size:10.5px;letter-spacing:1.8px;font-weight:bold;
+                color:var(--orange);margin-bottom:9px}
+  .flow .fs .ft{font-size:18px;font-weight:bold;line-height:1.25;color:var(--ink)}
+  .flow .fs .fd{font-size:14px;color:var(--mute);line-height:1.45;margin-top:8px}
+  .flow .fs.term{background:var(--panel2)}
+  .flow .arw{flex:none;width:34px;display:flex;align-items:center;justify-content:center;
+             color:#C9C7BC;font-size:21px;font-family:var(--mono)}
+
+  /* ── status table ─────────────────────────────────────────────────────
+     promoted from 2026.08.26-WP-Monthly-Review: label + value chip + description rows */
+  .stab{position:absolute;left:67px;width:672px;font-size:16px}
+  .stab .sr{display:grid;grid-template-columns:126px 1fr;align-items:baseline;column-gap:20px;
+            padding:13px 0;border-bottom:1px solid #EFEEE7}
+  .stab .sr:last-child{border-bottom:none}
+  .stab .sv{font-family:var(--mono);font-size:12.5px;font-weight:bold;padding:4px 10px;
+            border-radius:5px;text-align:center}
+  .stab .sv.ok  {background:#F0EFEA;color:#8A897F}
+  .stab .sv.info{background:#EEF1FB;color:#3B4FA8}
+  .stab .sv.warn{background:#FFF0DF;color:#A8631B}
+  .stab .sv.err {background:#FBECF3;color:#B3357A}
+  .stab .sd{color:var(--ink);line-height:1.42}
+  .stab .sd em{display:block;color:var(--mute);font-style:normal;font-size:14px;margin-top:3px}
+  .stab.tight{font-size:15.5px}
+  .stab.tight .sr{padding:10px 0}
+  .stab.tight .sd em{font-size:13.5px}
+  .stab.wide{width:auto;right:67px}
+  .stab.wide .sr{grid-template-columns:132px 1fr;padding:11px 0}
+
+  /* ── side panel ───────────────────────────────────────────────────────
+     promoted from 2026.08.26-WP-Monthly-Review. Same shape as .expanel above
+     (slate border, eyebrow heading, bullet list) but olive and bold-first-line —
+     the two are near-duplicates; consolidating them is a later cleanup, not this one. */
+  .rails{position:absolute;right:67px;width:404px;background:var(--panel);
+         border-left:5px solid var(--olive);border-radius:0 10px 10px 0;padding:20px 24px;
+         box-shadow:0 4px 14px rgba(0,0,0,.08)}
+  .rails .rh{font-family:var(--mono);font-size:10.5px;letter-spacing:1.8px;font-weight:bold;
+             color:var(--olive);margin-bottom:14px}
+  .rails ul{list-style:none}
+  .rails li{position:relative;padding-left:18px;margin-bottom:15px;font-size:15px;
+            line-height:1.4;color:var(--ink);font-weight:bold}
+  .rails li:last-child{margin-bottom:0}
+  .rails li:before{content:"";position:absolute;left:0;top:7px;width:6px;height:6px;
+                   border-radius:50%;background:var(--olive)}
+  .rails li .sub{display:block;font-size:13.5px;color:var(--mute);margin-top:4px;
+                 line-height:1.42;font-weight:normal}
+  .rails.tight li{margin-bottom:11px;font-size:14.5px;line-height:1.38}
+  .rails.tight li .sub{font-size:13px;margin-top:3px;line-height:1.4}
+
+  /* ── external link chip ──────────────────────────────────────────────
+     promoted from 2026.08.26-WP-Monthly-Review: link out to a captured demo/walkthrough */
+  .evlink{position:absolute;right:67px;top:88px;display:inline-flex;align-items:center;gap:9px;
+          padding:9px 16px;border-radius:8px;border:1px solid var(--orange);background:var(--panel2);
+          font-family:var(--mono);font-size:12.5px;letter-spacing:.4px;color:var(--orange);
+          text-decoration:none;font-weight:bold}
+  .evlink:hover{background:var(--orange);color:#fff}
+  .evlink .sub{font-family:var(--body);font-weight:normal;letter-spacing:0;color:var(--mute);font-size:12px}
+  .evlink:hover .sub{color:#FCEDE2}
+  @media print{.evlink{background:var(--panel2);color:var(--orange)}}
+
+  /* ── footer band ──────────────────────────────────────────────────────
+     promoted from 2026.08.26-WP-Monthly-Review. Pins at bottom:36px — a .strip
+     shrinks the usable band above it to y=640, not 720; see SKILL.md layout discipline.
+     .demo is the same idea with a dashed border, for a live-demo call-out. */
+  .strip{position:absolute;left:67px;right:67px;bottom:36px;padding:14px 22px;border-radius:9px;
+         background:var(--panel2);font-size:15.5px;color:var(--ink);line-height:1.45}
+  .strip b{font-family:var(--mono);font-size:10.5px;letter-spacing:1.8px;color:var(--orange);
+           display:block;margin-bottom:6px;font-weight:bold}
+  .strip .mono{font-family:var(--mono);font-size:14px;color:var(--slate)}
+  .demo{position:absolute;left:67px;right:67px;bottom:34px;padding:13px 20px;border-radius:9px;
+        background:var(--panel2);border:1px dashed #E7C8AC;font-size:15px;color:var(--mute)}
+  .demo b{color:var(--orange);font-family:var(--mono);font-size:12px;letter-spacing:2px}
+
+  /* ── alignment tree ───────────────────────────────────────────────────
+     promoted from 2026.08.26-WP-Monthly-Review: a Jira epic-and-children tree as
+     flat rows. .st is reserved by the tree's status pill — a .ctxp subtitle must
+     use .stt, never bare .st, or it inherits the pill's bold/padding/min-width. */
+  .chd{position:absolute;left:67px;right:67px;top:118px;display:flex;align-items:center;gap:14px;
+       padding-bottom:12px;border-bottom:2px solid var(--orange)}
+  .chd .ck{font-family:var(--mono);font-size:15px;font-weight:bold;color:var(--mute)}
+  .chd .cn{font-family:var(--head);font-weight:bold;font-size:27px;color:var(--ink)}
+  .chd .pill{font-size:12.5px;font-weight:bold;padding:3px 11px;border-radius:5px;
+             background:#E6F2E9;color:#3F7A52}
+  .chd .rel{font-size:12.5px;font-weight:bold;padding:3px 11px;border-radius:5px;
+            background:#EEF1FB;color:#3B4FA8;font-family:var(--mono)}
+  .chd .cl{margin-left:auto;font-family:var(--head);font-style:italic;font-size:17px;color:var(--mute)}
+  .tree{position:absolute;left:67px;right:67px;top:186px;font-size:16px}
+  .tr{display:grid;grid-template-columns:1fr auto auto;align-items:center;
+      column-gap:14px;padding:7px 0;border-bottom:1px solid #EFEEE7}
+  .tr:last-child{border-bottom:none}
+  .tr .lbl{display:flex;align-items:center;gap:11px;min-width:0}
+  .tr .txt{color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .tr.epic .txt{font-weight:bold}
+  .tr .ind{display:inline-block;flex:none;color:#C9C7BC;font-family:var(--mono);font-size:15px}
+  .k{flex:none;font-family:var(--mono);font-size:13px;font-weight:bold;letter-spacing:.3px;
+     padding:3px 9px;border-radius:5px;border:1px solid;white-space:nowrap}
+  .k.pmp{color:#3B4FA8;border-color:#C3CBEC;background:#EEF1FB}
+  .k.ux {color:#1F7A6B;border-color:#B6DED6;background:#EAF6F3}
+  .ep{flex:none;font-family:var(--mono);font-size:11.5px;color:#5A6BB5;background:#EEF1FB;
+      border-radius:4px;padding:2px 7px}
+  .cmps{display:flex;gap:6px;flex:none}
+  .cmp{font-size:12px;padding:2px 9px;border-radius:5px;border:1px dashed;white-space:nowrap}
+  .cmp.bz{color:#B3357A;border-color:#F0C2DC}
+  .cmp.mb{color:#A8631B;border-color:#F0D5B4}
+  .cmp.il{color:#4457B8;border-color:#C6CDEE}
+  .st{flex:none;font-size:12.5px;font-weight:bold;padding:3px 11px;border-radius:5px;
+      white-space:nowrap;min-width:88px;text-align:center}
+  .st.done{background:#2F52D9;color:#fff}
+  .st.wip {background:#E7EBFA;color:#3B4FA8}
+  .st.todo{background:#F0EFEA;color:#8A897F}
+  .st.note{background:none;color:var(--faint);font-style:italic;font-weight:normal;font-family:var(--head)}
