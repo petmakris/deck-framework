@@ -11,9 +11,16 @@ of each one carrying its own copy-pasted block.
 ## Files
 
 - `deck.css` — the shared style block: design tokens, slide canvas, all shared
-  components (`.introb`, `.ctxp`, `.grail`, `.card`, …), present mode, notes drawer.
+  components (`.introb`, `.ctxp`, `.grail`, `.card`, `.flow`, `.stab`, `.rails`,
+  `.strip`, the alignment tree, …), present mode, notes drawer.
 - `deck.js` — the shared script: page numbering, zoom-to-fit, present mode, speaker
   notes drawer, jump nav. Entirely generic — nothing per-deck.
+
+The full catalogue, with markup for each component, is
+[`components.md`](https://github.com/petmakris/dashboard/blob/main/skills/slides/references/components.md)
+in the (private) dashboard repo. The goal here is that a deck's own `<style>` block
+stays small or empty — a new visual pattern starts deck-local, proves itself on a real
+slide, and only then gets promoted here. See dashboard's `SKILL.md` for that process.
 
 ## Usage
 
@@ -22,9 +29,9 @@ from should never change shape just because the framework moved on. Bump the tag
 hand when you actually want a deck to pick up a framework update.
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/petmakris/deck-framework@v1.0.0/deck.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/petmakris/deck-framework@v1.1.0/deck.css">
 ...
-<script src="https://cdn.jsdelivr.net/gh/petmakris/deck-framework@v1.0.0/deck.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/petmakris/deck-framework@v1.1.0/deck.js"></script>
 ```
 
 Served via [jsDelivr](https://www.jsdelivr.com/), which mirrors any public GitHub repo
