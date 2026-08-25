@@ -304,3 +304,38 @@
   .st.wip {background:#E7EBFA;color:#3B4FA8}
   .st.todo{background:#F0EFEA;color:#8A897F}
   .st.note{background:none;color:var(--faint);font-style:italic;font-weight:normal;font-family:var(--head)}
+
+  /* ── data table ───────────────────────────────────────────────────────
+     promoted from 2026.08.28-Wiki-Drift-PMP-211: a real multi-column table.
+     Distinct from .stab, which is a two-column status list, not a table.
+
+     The first column is styled automatically as the label column — do NOT
+     put class="k" on it. .k is the alignment tree's ticket-key chip and
+     carries border:1px solid, which draws stray rules through table cells.
+     Cell borders are zeroed explicitly because border-collapse:collapse
+     otherwise lets adjacent edges paint where no rule asked for them. */
+  .dtable{position:absolute;left:67px;right:67px}
+  .dtable .cap{font-family:var(--mono);font-size:10.5px;letter-spacing:1.8px;font-weight:bold;
+               color:var(--orange);margin-bottom:12px}
+  .dtable .cap span{color:var(--faint);letter-spacing:1.2px;font-weight:normal}
+  .dtable table{width:100%;border-collapse:collapse}
+  .dtable th,.dtable td{border:0;text-align:left;background:none}
+  .dtable th{font-family:var(--mono);font-size:10px;letter-spacing:1.6px;color:var(--faint);
+             font-weight:bold;padding:0 18px 9px 0;border-bottom:2px solid var(--orange)}
+  .dtable td{font-size:16px;color:var(--ink);padding:12px 18px 12px 0;
+             border-bottom:1px solid var(--rule);vertical-align:top;line-height:1.35}
+  .dtable tr:last-child td{border-bottom:0}
+  .dtable td:first-child{font-family:var(--mono);font-size:13px;color:var(--mute);
+                         line-height:1.5;padding-right:28px}
+  .dtable td:last-child{padding-right:0}
+  .dtable td.ok{color:var(--olive);font-weight:bold}
+  .dtable td.no{color:var(--berry);font-weight:bold}
+  .dtable td.hi{color:var(--olive);font-weight:bold;background:#F2F5EC}
+  .dtable td .sub{display:block;font-family:var(--body);font-size:13px;font-weight:normal;
+                  color:var(--mute);margin-top:4px;line-height:1.4}
+  .dtable td .note{font-weight:normal;color:var(--mute)}
+  .dtable.compact td{font-size:15px;padding:8px 18px 8px 0}
+  .dtable.compact td .sub{font-size:12.5px}
+  .dtable.zebra td{border-bottom:0}
+  .dtable.zebra tbody tr:nth-child(odd) td{background:var(--panel)}
+  .dtable.zebra td:first-child{padding-left:12px}
